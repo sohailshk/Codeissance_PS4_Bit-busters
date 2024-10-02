@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    
+    <style>
+        /* Style to center the quiz and make it more visible */
+        .quiz-section {
+            display: flex;
+            justify-content: center;  /* Centers horizontally */
+            align-items: center;      /* Centers vertically */
+            height: 100vh;
+            
+                        /* Full viewport height to center vertically */
+        }
+
+        #quiz {
+          background-color: #2d1b54; /* White background with slight transparency */
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   /* Subtle shadow for emphasis */
+            width: 80%;  /* Responsive width */
+            max-width: 400px;  /* Set a max width for smaller screens */
+            text-align: center; /* Center the content inside */
+            color: white;
+        }
+
+        h2.question {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        button#submit {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button#submit:hover {
+            background-color: #4cae4c;
+        }
+
+        label.option {
+            font-size: 18px;
+            margin-left: 10px;
+            color: white;
+        }
+        label.option:hover{
+          color: green;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--header-->
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>Grad</em> School</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="test2.html">Home</a></li>
+                <li class="has-submenu"><a href="#section2">Register/Sign In</a>
+                    <ul class="sub-menu">
+                        <li><a href="student-reg.html">As Student</a></li>
+                        <li><a href="teacher-reg.html">As Teacher</a></li>
+                        <li><a href="mentor-reg.html">As Mentor</a></li>
+                        <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
+                    </ul>
+                </li>
+                <li><a href="courses.html">Career</a></li> <!-- Link to Courses page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to Contact page -->
+                <li><a href="dashboard.html">Scholarship</a></li> <!-- Link to dashboard page -->
+                <li><a href="mentor.html">Mentor</a></li><!-- Link to register page -->
+                <li><a href="https://templatemo.com" class="external">External</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section main-banner" id="top" data-section="section1">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/images/course-video.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="quiz-section">
+                <div id="quiz">
+                    <h2 class="question" id="question">Quiz Question</h2>
+                    <div class="score"></div>
+                    <hr />
+                    <ul>
+                        <li>
+                            <input type="radio" name="answer" class="answer" id="option_1" />
+                            <label for="option_1" class="option">Option 1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" class="answer" id="option_2" />
+                            <label for="option_2" class="option">Option 2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" class="answer" id="option_3" />
+                            <label for="option_3" class="option">Option 3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" class="answer" id="option_4" />
+                            <label for="option_4" class="option">Option 4</label>
+                        </li>
+                    </ul>
+                    <hr />
+                    <div class="btn">
+                        <button type="submit" id="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <script src="quiz.js"></script>
+</body>
+</html>
