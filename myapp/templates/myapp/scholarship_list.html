@@ -1,0 +1,98 @@
+<!-- myapp/templates/myapp/scholarship_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholarships</title>
+    <style>
+        /* Existing styles */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .add-button {
+            margin: 20px 0;
+        }
+        /* New styles for search input */
+        #searchInput {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scholarships</h1>
+    <div class="add-button">
+        <a href="{% url 'scholarship_create' %}">Add New Scholarship</a>
+    </div>
+
+    <!-- Search Input Field -->
+    <input type="text" id="searchInput" placeholder="Search by Degree...">
+
+    <table id="scholarshipTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+                <th>Degree</th>
+                <th>Income</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for scholarship in scholarships %}
+                <tr>
+                    <td>{{ scholarship.name }}</td>
+                    <td><a href="{{ scholarship.link }}" target="_blank">Visit</a></td>
+                    <td>{{ scholarship.degree }}</td>
+                    <td>{{ scholarship.income }}</td>
+                    <td>{{ scholarship.gender }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No scholarships available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- JavaScript for Search Functionality -->
+    <script>
+        // Wait for the DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const table = document.getElementById('scholarshipTable');
+            const tbody = table.getElementsByTagName('tbody')[0];
+            const rows = tbody.getElementsByTagName('tr');
+
+            searchInput.addEventListener('input', function() {
+                const filter = searchInput.value.toLowerCase();
+
+                // Iterate over each row
+                for (let i = 0; i < rows.length; i++) {
+                    const degreeCell = rows[i].getElementsByTagName('td')[2]; // 3rd column: Degree
+                    if (degreeCell) {
+                        const degreeText = degreeCell.textContent || degreeCell.innerText;
+                        // Check if the degree contains the filter text
+                        const isMatch = degreeText.toLowerCase().includes(filter);
+                        // Toggle the visibility of the row based on the match
+                        rows[i].style.display = isMatch ? '' : 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

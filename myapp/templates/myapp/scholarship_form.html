@@ -1,0 +1,53 @@
+<!-- myapp/templates/myapp/scholarship_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Scholarship</title>
+    <style>
+        .form-container {
+            width: 50%;
+            margin: auto;
+        }
+        .form-field {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .submit-button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .back-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Scholarship</h1>
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <div class="back-link">
+            <a href="{% url 'scholarship_list' %}">Back to Scholarships</a>
+        </div>
+    </div>
+</body>
+</html>
