@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth  import login, logout
-from .middlewares import auth,guest
+# from .middlewares import auth,guest
 
-@guest
+# @guest
 def register_view(request): #we write request so we can get access to all the views info whenever we want
     if request.method == 'POST':  # user has submitted form POST
         form = UserCreationForm(request.POST)
@@ -22,7 +22,7 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-@guest
+# @guest
 def login_view(request):
     if request.method == 'POST':  # user has submitted form POST
         form = AuthenticationForm(request, data=request.POST)
@@ -35,6 +35,6 @@ def login_view(request):
         form = AuthenticationForm(initial=initial_data)
     return render(request, 'auth/login.html', {'form':form})
 
-@auth
+# @auth
 def dashboard(request):
     return render(request,'dashboard.html')

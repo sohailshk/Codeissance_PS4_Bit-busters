@@ -14,44 +14,38 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
     <!--
-    
     TemplateMo 557 Grad School
 
     https://templatemo.com/tm-557-grad-school
 
     -->
 </head>
-
 <body>
+    <div class="chatbot-container">
+        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/7bc8f8c2-7bb5-41fd-8fe6-cd2058d08cc2"></iframe>
+    </div>
 
     <!--header-->
     <header class="main-header clearfix" role="header">
         <div class="logo">
-            <a href="#"><em>Grad</em> School</a>
+            <a href="#"><img class="logo-img" src="logo-removebg-preview.png" alt=""><em> Edu</em>venture </a>
         </div>
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
                 <li><a href="#section1">Home</a></li>
                 <li class="has-submenu"><a href="#section2">Register/Sign In</a>
-                    <ul class="sub-menu">
-                        <li><a href="student-reg.html">As Student</a></li>
-                        <li><a href="teacher-reg.html">As Teacher</a></li>
-                        <li><a href="mentor-reg.html">As Mentor</a></li>
-                        <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
-                    </ul>
                 </li>
-                <li><a href="courses.html">Career</a></li> <!-- Link to Courses page -->
-                <li><a href="contact.html">Contact</a></li> <!-- Link to Contact page -->
-                <li><a href="dashboard.html">Scholarship</a></li> <!-- Link to dashboard page -->
-                <li><a href="mentor.html">Mentor</a></li> <!-- Link to register page -->
-                <li><a href="https://templatemo.com" class="external">External</a></li>
+                <li><a href="{% url 'courses.html' %}">Career</a></li> <!-- Link to Courses page -->
+                <li><a href="{% url 'contact.html' %}"></li> <!-- Link to Contact page -->
+                <li><a href="{% url 'dashboard.html'%}"></li> <!-- Link to dashboard page -->
+                <li><a href="{% url 'mentor.html'%}"></li> <!-- Link to register page -->
             </ul>
         </nav>
     </header>
@@ -64,8 +58,8 @@
 
         <div class="video-overlay header-text">
             <div class="caption">
-                <h6>Graduate School of Management</h6>
-                <h2><em>Your</em> Classroom</h2>
+                <h6>Navigating Pathways to Success Together!</h6>
+                <h2>Eduventure</h2>
                 <div class="main-button">
                     <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
                 </div>
@@ -73,56 +67,6 @@
         </div>
     </section>
     <!-- ***** Main Banner Area End ***** -->
-
-
-    <section class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-12">
-                    <div class="features-post">
-                        <div class="features-content">
-                            <div class="content-show">
-                                <h4><i class="fa fa-pencil"></i>All Courses</h4>
-                            </div>
-                            <div class="content-hide">
-                                <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
-                                <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-                                <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-12">
-                    <div class="features-post second-features">
-                        <div class="features-content">
-                            <div class="content-show">
-                                <h4><i class="fa fa-graduation-cap"></i>Virtual Class</h4>
-                            </div>
-                            <div class="content-hide">
-                                <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
-                                <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-                                <div class="scroll-to-section"><a href="#section3">Details</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-12">
-                    <div class="features-post third-features">
-                        <div class="features-content">
-                            <div class="content-show">
-                                <h4><i class="fa fa-book"></i>Real Meeting</h4>
-                            </div>
-                            <div class="content-hide">
-                                <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
-                                <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-                                <div class="scroll-to-section"><a href="#section4">Read More</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="section why-us" data-section="section2">
         <div class="container">
@@ -147,7 +91,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <h4>Best Education</h4>
-                                        <p>Grad School is free educational HTML template with Bootstrap 4.5.2 CSS layout. Feel free to use it for educational or commercial purposes. You may want to make <a href="https://paypal.me/templatemo" target="_parent" rel="sponsored">a little donation</a> to TemplateMo. Please tell your friends about us. Thank you.</p>
+                                        <p>At [Your Website Name], we are committed to providing the highest quality education tailored to every learner's needs. Our innovative curriculum, expert faculty, and supportive learning environment ensure that students receive not just knowledge, but the skills and confidence needed to succeed in a rapidly evolving world. Join us and take the next step towards a brighter future.</p>
                                     </div>
                                 </div>
                             </article>
@@ -158,8 +102,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <h4>Top Level</h4>
-                                        <p>You can modify this HTML layout by editing contents and adding more pages as you needed. Since this template has options to add dropdown menus, you can put many HTML pages.</p>
-                                        <p>Suspendisse tincidunt, magna ut finibus rutrum, libero dolor euismod odio, nec interdum quam felis non ante.</p>
+                                        <p>Our top-level programs are designed to challenge and inspire students to reach their full potential. With advanced learning resources and a focus on practical skills, we ensure that every learner is prepared for success in their academic and professional journeys.</p>
                                     </div>
                                 </div>
                             </article>
@@ -170,7 +113,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <h4>Quality Meeting</h4>
-                                        <p>You are NOT allowed to redistribute this template ZIP file on any template collection website. However, you can use this template to convert into a specific theme for any kind of CMS platform such as WordPress. For more information, you shall <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> now.</p>
+                                        <p>Our commitment to excellence extends to every interaction. At [Your Website Name], we prioritize quality in every meeting and engagement, ensuring that all stakeholders – students, faculty, and partners – experience the highest level of professionalism and support.</p>
                                     </div>
                                 </div>
                             </article>

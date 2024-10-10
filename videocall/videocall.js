@@ -114,6 +114,5 @@ function recognizeGesture(landmarks) {
     } else if (!thumbIsOpen && !indexIsOpen) {
         return "Fist ✊";
     }
-
     return "Unknown Gesture";
 }
